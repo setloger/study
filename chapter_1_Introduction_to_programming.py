@@ -84,3 +84,38 @@ ch_a_b = print(a//b)
 ost_a_b = print(a%b)
 math.log10(a)
 stp_a_b = print(a**b)
+# ex 11
+
+mpg = float(input('Введите расход топлива для США: '))
+lpk = (100*3.785) / (mpg*1.609)
+print('Расход (л/100км) %.2f' %lpk)
+
+# ex 12
+import math
+dot_t1 = math.radians(int(input('Координаты первой точки, широта: ')))
+dot_g1 = math.radians(int(input('Координаты первой точки, долгота: ')))
+dot_t2 = math.radians(int(input('Координаты второй точки, широта: ')))
+dot_g2 = math.radians(int(input('Координаты второй точки, долгота: ')))
+
+distance = 6371.01 * (math.acos(math.sin(dot_t1)*math.sin(dot_t2) + math.cos(dot_t1)*math.cos(dot_t2)*math.cos(dot_g1-dot_g2)))
+print(distance)
+
+#ex 13
+
+# ex 14
+heigt_f = int(input('Введите рост в футах: '))
+heigt_d = int(input('Введите рост в дюймах: '))
+p_f = heigt_f * 12
+height_cm = (p_f + heigt_d)*2.54
+print('Ваш рост составляет %.2f см.' %height_cm)
+
+#ex 15
+
+ras = int(input('Введите расстояние: '))
+DY = 12
+YARD = 0.333333
+MILS = 0.000189394
+ras_d = ras*DY
+ras_ya = ras*YARD
+ras_ml = ras*MILS
+print('Расстояние в %.0f футов, равняется %.0f дюймам, %.4f ярдам, %.4f милям.' %(ras, ras_d, ras_ya, ras_ml))
