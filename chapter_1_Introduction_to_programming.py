@@ -119,3 +119,44 @@ ras_d = ras*DY
 ras_ya = ras*YARD
 ras_ml = ras*MILS
 print('Расстояние в %.0f футов, равняется %.0f дюймам, %.4f ярдам, %.4f милям.' %(ras, ras_d, ras_ya, ras_ml))
+
+#ex 16
+import math
+r = int(input('Введите радиус круга: '))
+area = math.pi * r**2
+volume = 4/3*math.pi*r**3
+print('Площадь круга: %.2f, радиусом %.0f, объем шара: %.2f' %(area, r, volume))
+
+#ex 17
+
+#ex 18
+import math
+r = int(input('Введите радиус цилиндра: '))
+h = int(input('Введите высоту цилиндра: '))
+area = math.pi * r**2
+volume = area * h
+print('Площадь цилиндра: %.2f, радиусом %.2f и высотой %.2f объем цилиндра: %.1f' %(area, r, h, volume))
+
+#ex 19
+import math
+h = int(input('Высота: '))
+A = 9.8
+speed = math.sqrt(2*A*h)
+print(speed)
+
+#ex 20
+
+#ex 21
+b = int(input('Введите длину основания: '))
+h = int(input('Введите высоту: '))
+area = b*h/2
+print('Длина основания %.2f треугольника, высота треугольника %.2f, площадь треугольника %.2f.' %(b, h, area))
+
+#ex 22
+import math
+s1 = int(input('Введите длину стороны № 1: '))
+s2 = int(input('Введите длину стороны № 2: '))
+s3 = int(input('Введите длину стороны № 3: '))
+s = (s1+s2+s3)/2
+area = math.sqrt(s*(s - s1)*(s - s2)*(s - s3))
+print('Длина стороны № 1 %.2f треугольника, lлина стороны № 2 %.2f, lлина стороны № 3 %.2f, площадь треугольника %.2f.' %(s1, s2, s3, area))
