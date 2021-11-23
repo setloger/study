@@ -160,3 +160,29 @@ s3 = int(input('Введите длину стороны № 3: '))
 s = (s1+s2+s3)/2
 area = math.sqrt(s*(s - s1)*(s - s2)*(s - s3))
 print('Длина стороны № 1 %.2f треугольника, lлина стороны № 2 %.2f, lлина стороны № 3 %.2f, площадь треугольника %.2f.' %(s1, s2, s3, area))
+
+#ex 22
+import math
+s1 = int(input('Введите длину стороны № 1: '))
+s2 = int(input('Введите длину стороны № 2: '))
+s3 = int(input('Введите длину стороны № 3: '))
+s = (s1+s2+s3)/2
+area = math.sqrt(s*(s - s1)*(s - s2)*(s - s3))
+print('Длина стороны № 1 %.2f треугольника, lлина стороны № 2 %.2f, lлина стороны № 3 %.2f, площадь треугольника %.2f.' %(s1, s2, s3, area))
+
+#ex 23
+import math
+PI = math.pi
+s = int(input('Введите длину стороны: '))
+n = int(input('Введите количество сторон: '))
+tang = math.tan(PI/n)
+area = (n*s**2)/(4*math.tan(PI/n))
+print('Длина стороны  %.2f, кол-во сторон %.2f, площадь %.2f , pi - %.6f, тангенс - %.6f' %(s, n, area, PI, tang))
+
+#ex24
+min1 = 60
+hour = int(input('Часы: '))
+minut = int(input('Минуты: '))
+seconds = int(input('Секунды: '))
+all_seconds = (hour*min1*60) + (minut*min1) + seconds
+print(all_seconds)
