@@ -186,3 +186,40 @@ minut = int(input('Минуты: '))
 seconds = int(input('Секунды: '))
 all_seconds = (hour*min1*60) + (minut*min1) + seconds
 print(all_seconds)
+
+#ex25
+D = 60 * 60 * 24
+H = 60 * 60
+M = 60
+
+i = int(input('Время: '))
+dd = int(i // D)
+hh = int((i - (dd*D)) // H)
+mm = int((i - (dd*D) - (hh*H)) // M)
+ss = int(i - (dd*D) - (hh*H)- (mm*M))
+print(f'{dd}: {hh}: {mm}: {ss}')
+print("Длительность:", \
+    "%d:%02d:%02d:%02d." % (dd, hh, mm, ss))
+
+##
+# Переводим секунды в дни, часы, минуты и секунды
+#
+SECONDS_PER_DAY = 86400
+SECONDS_PER_HOUR = 3600
+SECONDS_PER_MINUTE = 60
+# Запрашиваем у пользователя длительность в секундах
+seconds = int(input("Введите количество секунд: "))
+# Переводим введенное значение в дни, часы, минуты и секунды
+days = seconds / SECONDS_PER_DAY
+seconds = seconds % SECONDS_PER_DAY
+hours = seconds / SECONDS_PER_HOUR
+seconds = seconds % SECONDS_PER_HOUR
+minutes = seconds / SECONDS_PER_MINUTE
+seconds = seconds % SECONDS_PER_MINUTE
+# Отобразим результат в требуемом формате
+print("Длительность:", \
+"%d:%02d:%02d:%02d." % (days, hours, minutes, seconds))
+
+#26
+import time
+time.asctime()
