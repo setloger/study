@@ -61,3 +61,53 @@ elif input_user == 10:
     print('правильный десятиугольник')
 else:
     print('Вы ввели число не попадающее в диапазон от 3-х до 10-ти')
+
+#ex 39 
+user_month = input('Введите месяц: ')
+
+if user_month.lower() == 'январь':
+    print(f'31 день в {user_month}')
+elif user_month.lower() == 'февраль':
+    print(f'28 день в {user_month}')
+elif user_month.lower() == 'март':
+    print(f'31 день в {user_month}')
+elif user_month.lower() == 'апрель':
+    print(f'30 день в {user_month}')
+elif user_month.lower() == 'май':
+    print(f'31 день в {user_month}')
+elif user_month.lower() == 'июнь':
+    print(f'30 день в {user_month}')
+elif user_month.lower() == 'июль':
+    print(f'31 день в {user_month}')
+elif user_month.lower() == 'август':
+    print(f'30 день в {user_month}')
+elif user_month.lower() == 'сентябрь':
+    print(f'30 день в {user_month}')
+elif user_month.lower() == 'октябрь':
+    print(f'31 день в {user_month}')
+elif user_month.lower() == 'ноябрь':
+    print(f'30 день в {user_month}')
+elif user_month.lower() == 'декабрь':
+    print(f'31 день в {user_month}')
+else:
+    print('Вы ввели не те данные')
+
+#ex 40
+
+vol4 = (107, 130)
+vol3 = (71, 106)
+vol2 = (41, 70)
+vol1 = (0, 40)
+
+volume_noizy = int(input('Введите уровень шума, дБ: '))
+
+if volume_noizy >= vol4[0] and volume_noizy <= vol4[1]: 
+    print(f'Вы ввели - {volume_noizy} это между {vol4[0]} ... {vol4[1]}. Отбойный молоток')
+elif volume_noizy >= vol3[0] and volume_noizy <= vol3[1]:
+    print(f'Вы ввели - {volume_noizy} это между {vol3[0]} ... {vol3[1]}. Газовая газонокосилка')
+elif volume_noizy >= vol2[0] and volume_noizy <= vol2[1]:
+    print(f'Вы ввели - {volume_noizy} это между {vol2[0]} ... {vol2[1]}. Будильник')
+elif volume_noizy >= vol1[0] and volume_noizy <= vol1[1]:
+    print(f'Вы ввели - {volume_noizy} это между {vol1[0]} ... {vol1[1]}. Тихая комната')
+else:
+    print(f'Вы ввели - {volume_noizy}. Что-то не так!')
