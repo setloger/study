@@ -111,3 +111,47 @@ elif volume_noizy >= vol1[0] and volume_noizy <= vol1[1]:
     print(f'Вы ввели - {volume_noizy} это между {vol1[0]} ... {vol1[1]}. Тихая комната')
 else:
     print(f'Вы ввели - {volume_noizy}. Что-то не так!')
+
+#ex 41
+side_tr_1 = int(input('Введите размер 1-й стороны треугольника: '))
+side_tr_2 = int(input('Введите размер 2-й стороны треугольника: '))
+side_tr_3 = int(input('Введите размер 3-й стороны треугольника: '))
+
+if side_tr_1 == side_tr_2 and side_tr_1 == side_tr_3 and side_tr_2 == side_tr_3:
+    print(f'Сторона 1 = {side_tr_1}, сторона 2 = {side_tr_2}, сторона 3 = {side_tr_3} - это равносторонний треугольник!')
+elif side_tr_1 == side_tr_2 and side_tr_1 != side_tr_3 or side_tr_2 == side_tr_3 and side_tr_2 != side_tr_1 or side_tr_1 == side_tr_3 and side_tr_1 != side_tr_2:
+    print(f'Сторона 1 = {side_tr_1}, сторона 2 = {side_tr_2}, сторона 3 = {side_tr_3} - это равнобедренный треугольник!')
+else:
+    print(f'Сторона 1 = {side_tr_1}, сторона 2 = {side_tr_2}, сторона 3 = {side_tr_3} - это разносторонний треугольник!')
+
+#ex 42
+
+C4_FREQ = 261.63
+D4_FREQ = 293.66
+E4_FREQ = 329.63
+F4_FREQ = 349.23
+G4_FREQ = 392.00
+A4_FREQ = 440.00
+B4_FREQ = 493.88
+name = input("Введите название ноты в виде буквы и цифры, например C4: ")
+note = name[0]
+octave = int(name[1])
+# Получаем частоту ноты четвертой октавы
+if note == "C":
+    freq = C4_FREQ
+elif note == "D":
+    freq = D4_FREQ
+elif note == "E":
+    freq = E4_FREQ
+elif note == "F":
+    freq = F4_FREQ
+elif note == "G":
+    freq = G4_FREQ
+elif note == "A":
+    freq = A4_FREQ
+elif note == "B":
+    freq = B4_FREQ
+# Адаптируем частоту к конкретной октаве
+freq = freq / 2 ** (4-octave)
+# Выводим результат
+print("Частота ноты", name, "равна", freq)
