@@ -155,3 +155,60 @@ elif note == "B":
 freq = freq / 2 ** (4-octave)
 # Выводим результат
 print("Частота ноты", name, "равна", freq)
+
+#ex 43
+C4_FREQ = 261.63
+D4_FREQ = 293.66
+E4_FREQ = 329.63
+F4_FREQ = 349.23
+G4_FREQ = 392.00
+A4_FREQ = 440.00
+B4_FREQ = 493.88
+
+note = float(input(''))
+if note >= C4_FREQ*0.99 and note <= C4_FREQ*1.01:
+    print(f'Нота введенная {note} - это C4')
+elif note >= D4_FREQ*0.99 and note <= D4_FREQ*1.01:
+    print(f'Нота введенная {note} - это D4')
+elif note >= E4_FREQ*0.99 and note <= E4_FREQ*1.01:
+    print(f'Нота введенная {note} - это E4')
+elif note >= F4_FREQ*0.99 and note <= F4_FREQ*1.01: 
+    print(f'Нота введенная {note} - это F4')
+elif note >= G4_FREQ*0.99 and note <= G4_FREQ*1.01:
+    print(f'Нота введенная {note} - это G4')
+elif note >= A4_FREQ*0.99 and note <= A4_FREQ*1.01:
+    print(f'Нота введенная {note} - это A4')
+elif note >= B4_FREQ*0.99 and note <= B4_FREQ*1.01:
+    print(f'Нота введенная {note} - это B4')
+else:
+    print(f'Частота введенная {note} - не существует.')
+
+#ex44
+
+DV = ['Джоржд Вашингтон', 1]
+TJ = ['Томас Джефферсон', 2]
+AL = ['Авраам Линкольн', 5]
+AG = ['Александр Гамильтон', 10]
+ED = ['Эндрю Джексон', 20]
+UG = ['Улисс Грант', 50]
+BF = ['Бенджамин Франклин', 100]
+
+denomination = int(input('Введите номинал банкноты: '))
+
+
+if denomination == DV[1]:
+    print(f'Вы ввели номинал равный ${denomination}, на нем изображен {DV[0]}')
+elif denomination == TJ[1]:
+    print(f'Вы ввели номинал равный ${denomination}, на нем изображен {TJ[0]}')
+elif denomination == AL[1]:
+    print(f'Вы ввели номинал равный ${denomination}, на нем изображен {AL[0]}')
+elif denomination == AG[1]:
+    print(f'Вы ввели номинал равный ${denomination}, на нем изображен {AG[0]}')
+elif denomination == ED[1]:
+    print(f'Вы ввели номинал равный ${denomination}, на нем изображен {ED[0]}')
+elif denomination == UG[1]:
+    print(f'Вы ввели номинал равный ${denomination}, на нем изображен {UG[0]}')
+elif denomination == BF[1]:
+    print(f'Вы ввели номинал равный ${denomination}, на нем изображен {BF[0]}')
+else:
+    print('ОШИБКА! Такой банкноты не существует!')
