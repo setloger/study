@@ -212,3 +212,31 @@ elif denomination == BF[1]:
     print(f'Вы ввели номинал равный ${denomination}, на нем изображен {BF[0]}')
 else:
     print('ОШИБКА! Такой банкноты не существует!')
+
+#ex 45
+NY = '1 января'
+DK = '1 июля'
+RO = '25 декабря'
+
+user_day = input('Введите день месяц:  ')
+if user_day == NY:
+    print('НОВЫЙ ГОД')
+elif user_day == DK:
+    print('День Канады')
+elif user_day == RO:
+    print('Рождество')
+else:
+    print(f'{user_day} - такая дата не попадает на официальный праздник в Канаде')
+
+#ex 46
+
+checkerboard_number = input('Enter the number of the checkerboard (for example \"С4\" \"A1\"): ').lower()
+letter = checkerboard_number[0]
+number = int(checkerboard_number[1])
+
+black_cage = ('a', 'c', 'e', 'g')
+white_cage = ('b', 'd', 'f', 'h')
+if letter in black_cage and number % 2 != 0:
+    print(f'This checkerboard you entered {checkerboard_number.upper()} is \"BLACK\"')
+else:
+    print(f'This checkerboard you entered {checkerboard_number.upper()} is \"WHITE\"')
