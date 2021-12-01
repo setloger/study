@@ -240,3 +240,52 @@ if letter in black_cage and number % 2 != 0:
     print(f'This checkerboard you entered {checkerboard_number.upper()} is \"BLACK\"')
 else:
     print(f'This checkerboard you entered {checkerboard_number.upper()} is \"WHITE\"')
+
+#ex 47
+
+user_month = input('Enter month: ').lower()
+user_day = int(input('Enter day: '))
+
+if user_month == 'march' and 20 <= user_day <= 31 or user_month == 'april' or user_month == 'may' or user_month == 'june' and 1 <= user_day <= 20:
+    print(f'You entered is {user_day} {user_month}. This is SPRING!')
+elif user_month == 'june' and 21 <= user_day <= 30 or user_month == 'july' or user_month == 'august' or user_month == 'september' and 1 <= user_day <= 21 :
+    print(f'You entered is {user_day} {user_month}. This is SUMMER!')
+elif user_month == 'september' and 22 <= user_day <= 31 or user_month == 'october' or user_month == 'november' or user_month == 'december' and 1 <= user_day <= 20 :
+    print(f'You entered is {user_day} {user_month}. This is AUTUMN!')
+elif user_month == 'december' and 22 <= user_day <= 30 or user_month == 'january' or user_month == 'february' or user_month == 'march' and 1 <= user_day <= 19 :
+    print(f'You entered is {user_day} {user_month}. This is WINTER!')
+else:
+    print('You entered an invalid value!' )
+
+# ex 48
+date_birth = input('Enter your date of birth (for example \"21 december\"): ').lower()
+day_month_list = date_birth.split(' ')
+day_number = int(day_month_list[0])
+month_birth = day_month_list[1]
+
+if month_birth == 'december' and 22 <= day_number <= 31 or month_birth == 'january' and 1 <= day_number <= 19:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Capricorn!')
+elif month_birth == 'january' and 20 <= day_number <= 31 or month_birth == 'february' and 1 <= day_number <= 18:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Aquarius!')
+elif month_birth == 'february' and 19 <= day_number <= 28 or month_birth == 'march' and 1 <= day_number <= 20:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Pisces!')
+elif month_birth == 'march' and 21 <= day_number <= 31 or month_birth == 'april' and 1 <= day_number <= 19:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Aries!')    
+elif month_birth == 'april' and 20 <= day_number <= 30 or month_birth == 'may' and 1 <= day_number <= 20:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Taurus!')
+elif month_birth == 'may' and 21 <= day_number <= 31 or month_birth == 'june' and 1 <= day_number <= 20:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Gemini!')
+elif month_birth == 'june' and 21 <= day_number <= 30 or month_birth == 'july' and 1 <= day_number <= 22:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Cancer!')
+elif month_birth == 'july' and 23 <= day_number <= 31 or month_birth == 'august' and 1 <= day_number <= 22:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Leo!')
+elif month_birth == 'august' and 23 <= day_number <= 30 or month_birth == 'september' and 1 <= day_number <= 22:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Virgo!')
+elif month_birth == 'september' and 23 <= day_number <= 31 or month_birth == 'october' and 1 <= day_number <= 22:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Libra!')
+elif month_birth == 'october' and 23 <= day_number <= 30 or month_birth == 'november' and 1 <= day_number <= 21:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Scorpius!')
+elif month_birth == 'november' and 22 <= day_number <= 31 or month_birth == 'december' and 1 <= day_number <= 21:
+    print(f'You Date of Birth: {date_birth}. Zodiac sign is Sagittarius!')
+else:
+    print(f'You entered {date_birth}. This is not correct!')
