@@ -289,3 +289,40 @@ elif month_birth == 'november' and 22 <= day_number <= 31 or month_birth == 'dec
     print(f'You Date of Birth: {date_birth}. Zodiac sign is Sagittarius!')
 else:
     print(f'You entered {date_birth}. This is not correct!')
+
+#ex 49
+chinese_horoscope = {2000: 'Дракона', 2001: 'Змеи', 2002: 'Лошади', 2003: 'Козы', 2004: 'Обезьяны', 2005: 'Петуха', 
+                    2006: 'Собаки', 2007: 'Свиньи', 2008: 'Крысы', 2009: 'Быка', 2010: 'Тигра', 2011: 'Кролика'
+                    }
+year_birth = int(input('Enter your year of birth : '))
+if year_birth in chinese_horoscope:
+    print(f'Вы ввели год № {year_birth}, это год {chinese_horoscope[year_birth].upper()}!')
+elif 2011 <= year_birth :
+    print('Вы ввели не правильный год. Повторите попытку!')
+elif year_birth not in chinese_horoscope:
+    for i in range(year_birth, 2012, 12):
+        pass
+    print(f'Вы ввели год № {year_birth}, это год {chinese_horoscope[i].upper()}!!!')
+
+#ex 50
+
+user_magnitude = float(input('Enter your value magnitude:'))
+
+if user_magnitude < 2.0:
+    print(f'Entered magnitude value {user_magnitude} less than 2.0. Earthquake description - minimal.')
+elif 2.0 <= user_magnitude < 3.0:
+    print(f'Entered magnitude value {user_magnitude} more than 2.0 and less than 3.0. Earthquake description - very weak.')
+elif 3.0 <= user_magnitude < 4.0:
+    print(f'Entered magnitude value {user_magnitude} more than 3.0 and less than 4.0. Earthquake description - weak.')
+elif 4.0 <= user_magnitude < 5.0:
+    print(f'Entered magnitude value {user_magnitude} more than 4.0 and less than 5.0. Earthquake description - intermediate.')
+elif 5.0 <= user_magnitude < 6.0:
+    print(f'Entered magnitude value {user_magnitude} more than 5.0 and less than 6.0. Earthquake description - moderate.')
+elif 6.0 <= user_magnitude < 7.0:
+    print(f'Entered magnitude value {user_magnitude} more than 6.0 and less than 7.0. Earthquake description - strong.')
+elif 7.0 <= user_magnitude < 8.0:
+    print(f'Entered magnitude value {user_magnitude} more than 7.0 and less than 8.0. Earthquake description - very strong.')
+elif 8.0 <= user_magnitude < 10.0:
+    print(f'Entered magnitude value {user_magnitude} more than 8.0 and less than 10.0. Earthquake description - huge.')    
+else:
+    print(f'Entered magnitude value {user_magnitude} more than 10.0. Earthquake description - destructive.') 
