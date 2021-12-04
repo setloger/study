@@ -326,3 +326,33 @@ elif 8.0 <= user_magnitude < 10.0:
     print(f'Entered magnitude value {user_magnitude} more than 8.0 and less than 10.0. Earthquake description - huge.')    
 else:
     print(f'Entered magnitude value {user_magnitude} more than 10.0. Earthquake description - destructive.') 
+
+# ex 51
+a = int(input('Enter value a: ')) 
+b = int(input('Enter value b: '))
+c = int(input('Enter value c: '))
+D = b**2 - 4*a*c
+if D < 0:
+    print('No valid roots')
+elif D == 0:
+    x = -(b/2*a)
+    print('A quadratic equation has one root. Value = %.2f' %(x))
+elif 0 < D:
+    x1 = (-b + (D**0.5))/2*a 
+    x2 = (-b - (D**0.5))/2*a
+    print('A quadratic equation has two roots. Values first root = %.2f and second root = %.2f' %(x1, x2))
+else:
+    print('Bro, something went wrong!!!')
+
+#ex 52
+
+user_grade = input('Enter you letter grade:').upper()
+
+dict_letter_number = {'A+': 4.0, 'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0,
+                    'B-': 2.7, 'C+': 2.3, 'C': 2.0, 'C-': 1.7, 'D+': 1.3,
+                    'D': 1.0, 'F': 0,
+                    }
+if user_grade in dict_letter_number:
+    print(f'Entered value {user_grade}. You\'re grade is {dict_letter_number[user_grade]}')
+else:
+    print(f'Entered value {user_grade}. Bro you made a mistake!')
