@@ -356,3 +356,42 @@ if user_grade in dict_letter_number:
     print(f'Entered value {user_grade}. You\'re grade is {dict_letter_number[user_grade]}')
 else:
     print(f'Entered value {user_grade}. Bro you made a mistake!')
+
+#ex 53
+user_grade_number = float(input('Entered you are value number: '))
+
+dict_number_letter = {4.0: 'A', 3.7:'A-', 3.3: 'B+', 3: 'B',
+                    2.7: 'B-', 2.3: 'C+', 2.0: 'C', 1.7: 'C-', 1.3: 'D+',
+                    1.0: 'D', 0: 'F',
+                    }
+
+if user_grade_number in dict_number_letter:
+    print(f'Entered value {user_grade_number}. You\'re grade is {dict_number_letter[user_grade_number]}.') 
+elif 4.0 < user_grade_number:
+    print(f'Entered value {user_grade_number}. Excellent! You are grade is A+')
+elif user_grade_number < 0:
+    print(f'Entered value {user_grade_number}. Bro you made a mistake!')
+elif user_grade_number not in dict_number_letter:
+    user_grade_number2 = round(user_grade_number)
+    print(dict_number_letter[user_grade_number2])
+else:    
+    print(f'Entered value {user_grade_number}.') 
+
+# ex 54
+user_input = input('Enter you rating: ').lower()
+empl_rating_low = 'low_rating'
+empl_rating_satis = 'satisfactory rating'
+empl_rating_high = 'high rating'
+salary = 2400
+
+if user_input == empl_rating_low:
+    hike = 0.0 * salary
+    print(f'You are rating is \"{empl_rating_low}\" and a hike in wages ${hike}. ')
+elif user_input == empl_rating_satis:
+    hike = 0.4 * salary
+    print(f'You are rating is \"{empl_rating_satis}\" and a hike in wages ${hike}. ')
+elif user_input == empl_rating_high:
+    hike = 0.6 * salary
+    print(f'You are rating is \"{empl_rating_satis}\" and a hike in wages ${hike}. ')
+else:
+    print('User input is not correct! Try again!')
