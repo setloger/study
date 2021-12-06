@@ -395,3 +395,59 @@ elif user_input == empl_rating_high:
     print(f'You are rating is \"{empl_rating_satis}\" and a hike in wages ${hike}. ')
 else:
     print('User input is not correct! Try again!')
+
+# ex 55
+
+user_input = int(input('Enter wavelength from 380 to 750 '))
+
+if 380 <= user_input < 450:
+    print(f'You input is {user_input} and color of wavelength \"purple\"')
+elif 450 <= user_input < 495:
+    print(f'You input is {user_input} and color of wavelength \"blue\"')
+elif 495 <= user_input < 570:
+    print(f'You input is {user_input} and color of wavelength \"green\"')
+elif 570 <= user_input < 590:
+    print(f'You input is {user_input} and color of wavelength \"yellow\"')
+elif 590 <= user_input < 620:
+    print(f'You input is {user_input} and color of wavelength \"orange\"')
+elif 620 <= user_input <= 750:
+    print(f'You input is {user_input} and color of wavelength \"red\"')
+elif user_input < 380 or 750 < user_input:
+    print('User input is not correct! Try again!')
+
+# ex 56
+# the same as №55
+
+# ex 57
+
+user_call = int(input('Call'))
+user_sms = int(input('SMS'))
+subscription_fee = 15.00
+minutes, sms = 50, 50
+price_extra_minutes, price_extra_sms = 0.25, 0.15
+next_minut, next_sms  = 0.25, 0.15
+tax_911 = 0.44
+main_tax = 0.05
+main_tax_money = main_tax * (subscription_fee + tax_911)
+if user_call <= 50 and user_sms <= 50:
+    monthly_payment = subscription_fee + tax_911 + (main_tax * (subscription_fee + tax_911))
+    print(f'Subscription fee = $ {subscription_fee:.2f}\nTax fee for call center 911 = $ {tax_911:.2f}\nMain tax(5%) = $ {main_tax_money:.2f}\n-----------------------\nMonthly payment = $ {monthly_payment:.2f}\n ')
+elif user_call >= 50 and user_sms >= 50: 
+    extra_minutes = user_call - minutes
+    extra_sms = user_sms - sms
+    cost_extra_minutes = extra_minutes*price_extra_minutes
+    cost_extra_sms = extra_sms*price_extra_sms
+    monthly_payment = subscription_fee + tax_911 + main_tax_money + cost_extra_minutes + cost_extra_sms
+    print(f'Subscription fee = $ {subscription_fee:.2f}\nTax fee for call center 911 = $ {tax_911:.2f}\nMain tax(5%) = $ {main_tax_money:.2f}\n Extra minutes ({extra_minutes} pieces) = ${cost_extra_minutes:.2f}\n Extra minutes ({extra_sms} pieces) = ${cost_extra_sms:.2f}\n-----------------------\nMonthly payment = $ {monthly_payment:.2f}\n ')
+elif user_call >= 50 and user_sms <= 50: 
+    extra_minutes = user_call - minutes
+    cost_extra_minutes = extra_minutes*price_extra_minutes    
+    monthly_payment = subscription_fee + tax_911 + main_tax_money + cost_extra_minutes
+    print(f'Subscription fee = $ {subscription_fee:.2f}\nTax fee for call center 911 = $ {tax_911:.2f}\nMain tax(5%) = $ {main_tax_money:.2f}\nExtra minutes ({extra_minutes} pieces) = ${cost_extra_minutes:.2f}\n-----------------------\nMonthly payment = $ {monthly_payment:.2f}\n ')
+elif user_call <= 50 and user_sms >= 50: 
+    extra_sms = user_sms - sms    
+    cost_extra_sms = extra_sms*price_extra_sms
+    monthly_payment = subscription_fee + tax_911 + main_tax_money + cost_extra_sms
+    print(f'Subscription fee = $ {subscription_fee:.2f}\nTax fee for call center 911 = $ {tax_911:.2f}\nMain tax(5%) = $ {main_tax_money:.2f}\nExtra sms ({extra_sms} pieces) = ${cost_extra_sms:.2f}\n-----------------------\nMonthly payment = $ {monthly_payment:.2f}\n ')
+else:
+    print('Ooops! Something went wrong')
