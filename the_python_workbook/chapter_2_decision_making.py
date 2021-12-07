@@ -451,3 +451,40 @@ elif user_call <= 50 and user_sms >= 50:
     print(f'Subscription fee = $ {subscription_fee:.2f}\nTax fee for call center 911 = $ {tax_911:.2f}\nMain tax(5%) = $ {main_tax_money:.2f}\nExtra sms ({extra_sms} pieces) = ${cost_extra_sms:.2f}\n-----------------------\nMonthly payment = $ {monthly_payment:.2f}\n ')
 else:
     print('Ooops! Something went wrong')
+
+# ex 58
+year = int(input('Enter year: '))
+if (year % 400 == 0) or (year % 4 == 0) and (year % 100 != 0):
+    print('YES')
+else:
+    print('NO')
+
+# ex 59 ver 2
+year = int(input('Enter year: '))
+month = input('Enter month: ').lower()
+day = int(input('Enter day: '))
+month31 = ['january', 'march', 'may', 'july', 'august', 'october', 'december']
+month30 = ['april', 'june', 'september', 'november']
+next_month = {'january':'february', 'february': 'march', 'march': 'april', 'april': 'may', 'may': 'june', 'june': 'july', 'july': 'august', 'august': 'september', 'september': 'october', 'october': 'november',  'november': 'december', 'december': 'january'}
+
+if month in month31 and 1<= day <=30 and month != 'february':
+    day += 1
+    print(f'Tomorrow is {day} {month} {year}.')
+elif month in month31 and day == 31 and month != 'december':
+    print(f'Tomorrow is 1 {next_month[month]} {year}.')
+elif month in month30 and 1<= day <=29 and month != 'february':
+    day += 1
+    print(f'Tomorrow is {day} {month} {year}.')
+elif month in month30 and day == 30:
+    print(f'Tomorrow is 1 {next_month[month]} {year}.')
+elif month == 'december' and day == 31:
+    year += 1
+    print(f'Tomorrow is 1 {next_month[month]} {year}.')
+elif month == 'february':
+    if year % 400 == 0 or year % 4 == 0 and year % 100 != 0:
+        day += 1
+        print(f'Tomorrow is {day} {month} {year}.')
+    else: 
+        print(f'Tomorrow is 1 {next_month[month]} {year}.')
+else:
+    print('Ooops! Something went wrong... Try again!')
