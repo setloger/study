@@ -488,3 +488,56 @@ elif month == 'february':
         print(f'Tomorrow is 1 {next_month[month]} {year}.')
 else:
     print('Ooops! Something went wrong... Try again!')
+
+# ex 60 ver 2
+floor1 = (year - 1)/4
+floor2 = (year - 1)/100
+floor3 = (year - 1)/400
+day_dict = {0: 'Sunday - Воскресенье', 1:'Monday - Понедельник', 2:'Tuesday - Вторник', 3:'Wednesday - Среда', 4:'Thursday - Четверг', 5:'Friday - Пятница', 6:'Saturday - Суббота'}
+for year in range(2000, 2022):
+    day_of_the_week = (year + round(floor1) - round(floor2) + round(floor3))%7
+    if day_of_the_week in day_dict:
+        print(year, day_dict[day_of_the_week])
+    
+# ex 61 (did not decide )
+
+# ex 62
+import random
+
+random_number = random.randint(1, 38)
+print(random_number)
+print('Your bid?')
+variant_bids = {1:'One number! From 1 to 36 and 0, 00.', 2:'Red or black!', 3:'even or odd (excluding 0, 00)', 4:'from 1 to 18 versus from 19 to 36'}
+user_variant_game = int(input('Choise from 1 to 4'))
+user_bid = int(input('Choise from your BID!'))
+red_bid = (1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36)
+if 0< user_variant_game <=4:
+    print(f'The participant chose {user_variant_game}! It\'s "{variant_bids[user_variant_game]}". Your selection of numbers is {user_bid}')    
+else:
+    print('Your choise is not tru!') 
+
+if 1<= random_number <= 18:
+    if random_number in red_bid and random_number%2==0:
+        print(f'Drawn number is {random_number}\nWinning bet is {random_number}\nWinning bet is RED\nNumber is EVEN\nWinning bet from 1 to 18')   
+    elif random_number in red_bid and random_number%2!=0:
+        print(f'Drawn number is {random_number}\nWinning bet is {random_number}\nWinning bet is RED\nNumber is ODD\nWinning bet from 1 to 18')
+    elif random_number not in red_bid and random_number%2==0:
+        print(f'Drawn number is {random_number}\nWinning bet is {random_number}\nWinning bet is BLACK\nNumber is EVEN\nWinning bet from 1 to 18')        
+    elif random_number not in red_bid and random_number%2!=0:
+        print(f'Drawn number is {random_number}\nWinning bet is {random_number}\nWinning bet is BLACK\nNumber is ODD\nWinning bet from 1 to 18')        
+if 19<= random_number <= 36:
+    if random_number in red_bid and random_number%2==0:
+        print(f'Drawn number is {random_number}\nWinning bet is {random_number}\nWinning bet is RED\nNumber is EVEN\nWinning bet from 19 to 36')   
+    elif random_number in red_bid and random_number%2!=0:
+        print(f'Drawn number is {random_number}\nWinning bet is {random_number}\nWinning bet is RED\nNumber is ODD\nWinning bet from 19 to 36')
+    elif random_number not in red_bid and random_number%2==0:
+        print(f'Drawn number is {random_number}\nWinning bet is {random_number}\nWinning bet is BLACK\nNumber is EVEN\nWinning bet from 19 to 36')        
+    elif random_number not in red_bid and random_number%2!=0:
+        print(f'Drawn number is {random_number}\nWinning bet is {random_number}\nWinning bet is BLACK\nNumber is ODD\nWinning bet from 19 to 36')        
+elif random_number == 37:
+    print('Drawn number is 0\nWinning bet is 0')      
+elif random_number == 38:
+    print('Drawn number is 00\nWinning bet is 00')         
+else:
+    pass
+
