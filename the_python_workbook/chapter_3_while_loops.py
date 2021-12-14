@@ -84,3 +84,52 @@ while user_grade in dict_letter_number:
     user_grade = input('Enter you letter grade:').upper()
 sum_data = sum(user_data)/len(user_data)
 print(sum_data)
+
+# exercise 69
+child_3 = 0.00
+child_3_13 = 14.00
+adult_13_65 = 23.00
+pensioner = 18.00
+
+
+age_visitors = []
+
+age_visitor = input('Enter your age:')
+
+while age_visitor !='':
+    age = int(age_visitor)    
+    
+    if 0<=age<=3:             
+        age_visitors.append(child_3)
+        print(f'Your are entered age is {age}. Ticket price is {child_3}')   
+    elif 3<age<=13:
+        age_visitors.append(child_3_13)
+        print(f'Your are entered age is {age}. Ticket price is {child_3_13}')    
+    elif 13<age<=65:
+        age_visitors.append(adult_13_65)
+        print(f'Your are entered age is {age}. Ticket price is {adult_13_65}')
+    elif 65<age:
+        age_visitors.append(pensioner)
+        print(f'Your are entered age is {age}. Ticket price is {pensioner}')    
+    else:
+        print('You entered the incorrect age of the visitor! Try again! ')
+    age_visitor = input('Enter your age:')
+print(f'Total amount - ${sum(age_visitors)} ')
+
+# exercise 70
+sum_bit = 0
+len_total = []
+user_bit = input('')
+while user_bit !='' and len(len_total) < 8:    
+    if user_bit == '1' or user_bit == '0':
+        sum_bit += int(user_bit)
+        len_total.append(user_bit)    
+        user_bit = input('')
+    else:
+        print(f'You entered {user_bit} this is not "0" or "1". Try again please')
+        user_bit = input('')
+if int(len_total.count('1')) % 2 == 0:
+    print('Parity bit is 0')
+else:
+    print('Parity bit is 1')
+print(len_total)
