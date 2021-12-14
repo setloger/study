@@ -42,3 +42,45 @@ else:
     cash_total = sum(user_list)+0.05 - cash_money/100
 
 print(f'User entered numbers: {user_list}. The sum of the digits entered by the user is ${cash_total}')
+
+# exercise 67
+from math import sqrt
+perimetr = 0
+
+first_x = float(input('Enter X: '))
+first_y = float(input('Enter Y: '))
+
+prev_x = first_x
+prev_y = first_y
+
+line = input('Enter next x coordinat: ')
+
+while line !='':
+    x = float(line)
+    y = float(input('Enter next coordinat Y: '))
+    distance = sqrt((prev_x - x)**2 +(prev_y - y)**2)
+    perimetr = perimetr + distance
+    prev_x = x
+    prev_y = y
+    line = input('Enter next x coordinat: ')
+distance = sqrt((first_x - x)**2 +(first_y - y)**2)
+perimetr = perimetr + distance
+print('Perimetr: ', perimetr)
+
+# exercise 68
+user_data = []
+user_grade = input('Enter you letter grade:').upper()
+
+dict_letter_number = {'A+': 4.0, 'A': 4.0, 'A-': 3.7, 'B+': 3.3, 'B': 3.0,
+                    'B-': 2.7, 'C+': 2.3, 'C': 2.0, 'C-': 1.7, 'D+': 1.3,
+                    'D': 1.0, 'F': 0,
+                    }
+while user_grade in dict_letter_number:
+    user_data.append(dict_letter_number[user_grade])
+    if user_grade in dict_letter_number:
+        print(f'Entered value {user_grade}. You\'re grade is {dict_letter_number[user_grade]}')
+    else:
+        print(f'Entered value {user_grade}. Bro you made a mistake!')
+    user_grade = input('Enter you letter grade:').upper()
+sum_data = sum(user_data)/len(user_data)
+print(sum_data)
