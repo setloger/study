@@ -133,3 +133,35 @@ if int(len_total.count('1')) % 2 == 0:
 else:
     print('Parity bit is 1')
 print(len_total)
+
+# exercise 71
+check = 0
+CONST3 = 3
+NUM4 = 4
+start2 = 0
+start3 = 1
+start4 = 2 
+while check < 15:
+    check += 1
+    start2 += 2
+    start3 += 2
+    start4 += 2 
+    if check%2 != 0:
+        iter = NUM4/((start2)*(start3)*(start4))
+        CONST3 +=iter
+    elif check%2 == 0:
+        iter = -(NUM4/((start2)*(start3)*(start4)))
+        CONST3 +=iter
+
+print(CONST3)
+    
+#exercise 72
+for i in range(1,101):
+    if i % 3==0 and i % 5==0:
+        print(f'Number {i} Fizz-Buzz')
+    elif i % 3==0:
+        print(f'Number {i} Fizz')
+    elif i % 5==0:
+        print(f'Number {i} Buzz')
+    else:
+        pass
