@@ -165,3 +165,30 @@ for i in range(1,101):
         print(f'Number {i} Buzz')
     else:
         pass
+
+# exercise 73 (35 strings)
+user_phrase = input('Entered your phrase: ').lower()
+user_encoding = int(input('Enter encoding variant'))
+alphabet = ('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z')
+for x in user_phrase:
+    if x in alphabet:        
+        #print(f'Old values: {alphabet.index(x)}. New values {alphabet.index(x)+1}')
+        print(alphabet[alphabet.index(x)+user_encoding], end='')
+
+# exercise 74 (14 strings)
+
+# exercise 75 (26 strings)
+word = input('')
+if word == word[::-1]:
+    print('This word is palindrome!')
+else:
+    print('This word is not palindrome!')
+#exercise 75 (26 strings) ver 2
+word = list(input('').lower())
+new_word = []
+for x in word[::-1]:
+    new_word.append(x)
+if word == new_word:
+    print('This word is palindrome!')
+else:
+    print('This word is not palindrome!')
