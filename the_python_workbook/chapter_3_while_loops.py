@@ -192,3 +192,44 @@ if word == new_word:
     print('This word is palindrome!')
 else:
     print('This word is not palindrome!')
+
+#exercise 75 (26 strings) ver 2
+word = list(input('').lower())
+new_word = []
+for x in word[::-1]:
+    new_word.append(x)
+if word == new_word:
+    print('This word is palindrome!')
+else:
+    print('This word is not palindrome!')
+
+#exercise 76 (35 strings) 
+word = list(input('').lower().replace(' ', ''))
+new_word = []
+for x in word[::-1]:
+    new_word.append(x)
+if word == new_word:
+    print('This word is palindrome!')
+else:
+    print('This word is not palindrome!')    
+
+#exercise 77 (18 strings)        
+"""table = 0
+while table < 11:
+    table+=1
+    for x in range(1,11):   
+        print(x*table, end=' ')"""
+
+MIN = 1
+MAX = 10
+# Строка заголовков
+print(" ", end = "")
+for i in range(MIN, MAX + 1):
+    print("%4d" % i, end = "")
+print()
+# Выводим таблицу
+for i in range(MIN, MAX + 1):
+    print("%4d" % i, end = "")
+    for j in range(MIN, MAX + 1):
+        print("%4d" % (i * j), end = "")
+    print()    
