@@ -232,4 +232,36 @@ for i in range(MIN, MAX + 1):
     print("%4d" % i, end = "")
     for j in range(MIN, MAX + 1):
         print("%4d" % (i * j), end = "")
-    print()    
+    print() 
+
+#exercise 78 (18 strings)       
+    
+user_number = int(input(''))
+print(user_number)
+while user_number != 1:
+    if user_number % 2 == 0:
+        user_number = user_number / 2
+        print(user_number)
+    elif user_number %2  != 0:
+        user_number = user_number * 3 + 1
+        print(user_number)
+    else:
+        pass
+
+#exercise 79 (17 strings)
+
+first_number = int(input(''))
+second_number = int(input(''))
+num_iter = 0
+if first_number < second_number:
+    d = first_number
+else:
+    d = second_number
+print(f'd is {d}')
+
+while (first_number % d !=0) or (second_number % d !=0):
+    num_iter +=1
+    first_number % d
+    second_number % d
+    d -= 1
+    print(f'Number of iterration {num_iter}, del {d}')   
