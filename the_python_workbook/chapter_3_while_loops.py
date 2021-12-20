@@ -264,4 +264,30 @@ while (first_number % d !=0) or (second_number % d !=0):
     first_number % d
     second_number % d
     d -= 1
-    print(f'Number of iterration {num_iter}, del {d}')   
+    print(f'Number of iterration {num_iter}, del {d}')  
+
+#exercise 80 (17 strings)
+user_number = int(input(''))
+factor = 2
+user_list = []
+while factor <= user_number:
+    if user_number % factor == 0:
+        user_list.append(factor)        
+        user_number = user_number / factor
+    else:
+        factor += 1
+
+print(user_list)
+
+#exercise 83 (34 strings)
+import random
+us_num = []
+max_number = random.randint(1,100)
+for i in range (100):
+    us_num.append(random.randint(1,100))
+for x in us_num:
+    if max_number < x:
+        max_number = x
+        print(f"{x} <<<=== New max")
+    else:
+        print(x)  
