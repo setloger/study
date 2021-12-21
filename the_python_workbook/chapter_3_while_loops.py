@@ -291,3 +291,42 @@ for x in us_num:
         print(f"{x} <<<=== New max")
     else:
         print(x)  
+
+#exercise 84 (47 strings)
+
+import random
+stop_x = 0
+x_list = []
+#for i in range(10):
+for i in range(10):
+    stop_x +=1   
+    x = random.randint(0,1)
+    x_list.append(x)
+    if x_list[i] == x_list[i+1] and x_list[i+1] == x_list[i+2]:
+        print('Break')
+        break
+    else:
+        if x == 0:
+            print('О', end=' ')
+        elif x == 1:
+            print('Р', end=' ')
+        else:
+            pass
+print(f'(Число попыток - {len(x_list)})\n', end=' ')
+    
+  
+if __name__ == '__main__':
+    arr = [3,5,6,2,4,2,2,2,5,4,1,1,1,5]
+    mem = arr[0]
+    count = 1
+    for i in range(1,len(arr)):
+        if arr[i] == mem:
+           count+=1
+        else:
+            count = 1
+        if count == 3:
+            for j in range(i-2,i+1):
+                arr[j] = ""
+                
+        mem = arr[i]
+    print(arr)
