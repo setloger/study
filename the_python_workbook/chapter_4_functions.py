@@ -33,3 +33,52 @@ def total_sum():
     total_price = BASE+over_base
     print(f'Your distance is {user_distatnce} km. Total PRICE: ${total_price:.2f}')
 total_sum()
+
+#exercise 87 (23 strings)
+def all_price():
+    number_goods = int(input('Enter number of goods: '))
+    total_price = (number_goods - 1)* 2.95 + 10.95
+    print(f'Numbers of goods {number_goods}. The amount of goods is: ${total_price:.2f}')
+all_price()
+
+#exercise 88 (43 strings)
+import statistics
+
+def median_user():
+    user_data_list = []
+    user_data = input('')
+    while user_data != '':        
+        user_data_list.append(int(user_data))
+        user_data = input('')
+    return statistics.median(user_data_list)
+median_user()
+
+#exercise 89 (47 strings)
+def trans_numder():
+    user_num = int(input('Число от 1-го до 10'))
+    while 1<=user_num<=10: 
+        if user_num == 1:
+            return print('Первый')
+        elif user_num == 2:
+            return print('Второй')
+        elif user_num == 3:
+            return print('Третий')
+        elif user_num == 4:
+            return print('Четвертый')
+        elif user_num == 5:
+            return print('Пятый')
+        elif user_num == 6:
+            return print('Шестой')
+        elif user_num == 7:
+            return print('Седьмой')
+        elif user_num == 8:
+            return print('Восьмой')
+        elif user_num == 9:
+            return print('Девятый')
+        elif user_num == 10:
+            return print('Десятый')
+        else:
+            print('Вы ввели не то число. Попробуйте еще раз')        
+        
+trans_numder()
+
