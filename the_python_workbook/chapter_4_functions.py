@@ -82,3 +82,107 @@ def trans_numder():
         
 trans_numder()
 
+#exercise 90 (52 strings) ПОЛНЫЙ ПИ
+##
+# Отображаем полный текст песни The Twelve Days of Christmas.
+#
+from chapter_4_functions import trans_numder
+
+## Отображаем один куплет песни The Twelve Days of Christmas
+# @param n – куплет для отображения
+# @return (None)
+def displayVerse(n):
+    print("On the", trans_numder(n), "day of Christmas")
+    print("my true love sent to me:")
+    if n >= 12:
+        print("Twelve drummers drumming,")
+    if n >= 11:
+        print("Eleven pipers piping,")
+    if n >= 10:
+        print("Ten lords a–leaping,")
+    if n >= 9:
+        print("Nine ladies dancing,")
+    if n >= 8:
+        print("Eight maids a–milking,")
+    if n >= 7:
+        print("Seven swans a–swimming,")
+    if n >= 6:
+        print("Six geese a–laying,")
+    if n >= 5:
+        print("Five golden rings,")
+    if n >= 4:
+        print("Four calling birds,")
+    if n >= 3:
+        print("Three French hens,")
+    if n >= 2:
+        print("Two turtle doves,")
+    if n == 1:
+        print("A", end=" ")
+    else:
+        print("And a", end=" ")
+print("partridge in a pear tree.")
+print()
+# Отображаем все 12 куплетов песни
+def main():
+    for verse in range(1, 13):
+        displayVerse(verse)
+# Вызываем основную функцию
+main()
+
+#exercise 93 (29 strings) ver 1
+
+def str_center():
+    s = input('')
+    w = int(input(''))      
+    if len(s) >= w:
+        print(s)
+    else:
+        print('#'*w)
+        ls_new = (w-len(s))//2
+        print(' '*ls_new + s)
+        print('#'*w)
+        #print(ls_new)
+    #print(s, type(s))
+    #print(w, type(w))
+
+str_center()    
+
+#exercise 93 (29 strings) ver 2
+w = 62
+def str_center(s, w):
+         
+    if len(s) >= w:
+        return s
+    else:
+        print('#'*w)        
+        return ' '*((w-len(s))//2) + s     
+    
+def main():
+    print(str_center("Alexander Ivanov", w))
+    print(str_center("New character", w))
+    print(str_center("My ball", w))    
+    
+main()
+
+#exercise 94 (33 strings)
+
+def triangle(str1, str2, str3):
+    print(f'Сторона 1: {str1}, сторона 2: {str2}, сторона {str3}')    
+    if str1 and str2 and str3 > 0:   
+        if (str1+str2 <= str3) or (str2+str3 <= str1) or (str3+str1 <= str2):        
+            print('Not OK')
+        else:        
+            print('ok')
+    else:
+        print('False')
+def main():
+    triangle(3,4,5)  
+    triangle(10,10,10) 
+    triangle(1,1,5)  
+    triangle(-1,0,5)
+main()
+
+a = 2
+b = 5
+res = a+10 if a > b else b+2
+print(res)
