@@ -186,3 +186,5 @@ a = 2
 b = 5
 res = a+10 if a > b else b+2
 print(res)
+
+
