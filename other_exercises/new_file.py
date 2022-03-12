@@ -10,3 +10,9 @@ a = [x
     for x in row
     ]
 print(a)
+
+A, B = 4,5
+a = [[z for z in range(1, A)] for d in range(B)]
+print(a)
+
+a_new = [[x ** 2 for x in row] for row in a]
