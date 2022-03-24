@@ -24,3 +24,14 @@ for i in range(2, len(unique_numbers)):
     elif unique_numbers[i] > secondPlayer and unique_numbers[i] != firstPlayer:
         secondPlayer = unique_numbers[i]
 print(secondPlayer)
+
+
+# Nested Lists
+python students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti', 41], ['Harsh', 39]]
+if __name__ == '__main__':
+p_s = []
+    for _ in range(int(input())):
+        p_s = []
+        name = input()
+        score = float(input())
+        p_s.append(name, score)
