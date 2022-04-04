@@ -1,4 +1,5 @@
 # lesson 3
+from msilib.schema import Class
 from string import ascii_letters
 from typing import Type
 
@@ -71,6 +72,7 @@ class Clock:
     def __init__(self, seconds: int):
         if not isinstance(seconds, int):
             raise TypeError('Секунды должны быть целым числом')
+        self.seconds = seconds % self.__DAY
     
     def get_time(self):
         s = self.seconds % 60
@@ -82,9 +84,97 @@ class Clock:
     def __get_formatted(cls, x):
         return str(x).rjust(2, '0')
 
+    def __add__(self, other):
+        if not isinstance(other, (int, Clock)):
+            raise ArithmeticError('Правый операнд должен быть int или Clock')
+        
+        sc = other
+        if isinstance(other, Clock):
+            sc = other.seconds
+        
+        return Clock(self.seconds + sc)
 
-c1 = Clock(1000)
-print(c1.get_time())
+
+# lesson 18 пример использования магических методов __getitem__ __setitem__ __delitem__
+
+class Student:
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = list(marks)
+
+    def __getitem__(self, item): #для Миши вариант
+        if 0 <= item < len(self.marks):         
+            return self.marks[item]
+        else:
+            raise IndexError('Неверный индекс')
 
 
 
+s1 = Student('Саша', [8,7,4,4,7,9])
+print(s1.marks[1], s1.name)
+
+s2 = Student('Миша', [10,9,9,8,7,9])
+print(s2[1], s2.name, f'Полная коллекция оценок {s2.marks}')
+#print(s2[21], s2.name) генерируем исключение
+
+
+# lesson 19 пример использования магических методов __next__ __iter__
+
+class FRange:
+    def __init__(self, start=0.0, stop=0.0, step=1.0) -> None:
+        self.start = start
+        self.stop = stop
+        self.step = step
+        #self.value = self.start - self.step
+
+    def __iter__(self):                     #чтобы можно было применить цикл for для итерации прописывается магический метод __iter__
+        self.value = self.start - self.step
+        return self 
+
+    def __next__(self):
+        if self.value + self.step < self.stop:
+            self.value +=self.step
+            return self.value
+        else:
+            raise StopIteration
+
+
+fr = FRange(0, 3, 0.5)
+
+"""print(fr.__next__())
+print(fr.__next__())
+print(fr.__next__())
+print(fr.__next__())
+print(fr.__next__())
+print(fr.__next__())
+# print(fr.__next__()) срабатывает исключение StopIteration"""
+
+"""print(next(fr))
+print(next(fr))
+print(next(fr))
+print(next(fr))
+print(next(fr))
+print(next(fr))"""
+
+for i in fr:
+    print('Через for', i)
+
+
+# lesson 20 Наследование от встроенных типов и от object
+
+class Vector(list):
+    def __str__(self):
+        return ' '.join(map(str, self))
+
+
+class Vector2(list):
+    pass
+
+
+v = Vector([1,2,5])
+print(v)
+print(type(v))
+
+v2 = Vector2([1,2,5])
+print(v2)
+print(type(v2))
