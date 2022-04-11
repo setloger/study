@@ -8,3 +8,9 @@ class Point2D:
 
 class Point3D(Point2D):
     pass
+
+
+pt = Point3D(10, 20)
+pt.x
+pt.z = 25
+pt.__dict__
