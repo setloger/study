@@ -13,7 +13,7 @@ def run_game():
     pygame.display.set_caption('Alien game')
 
     #Создание коробля
-    ship = Ship(screen)
+    ship = Ship(ai_settings, screen)
 
     #Назначение цвета фона
     bgcolor = (230, 230, 230)
