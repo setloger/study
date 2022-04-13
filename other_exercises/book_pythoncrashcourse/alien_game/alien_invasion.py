@@ -1,6 +1,7 @@
-import sys
 import pygame
 from settings import Settings
+from ship import Ship
+import game_functions as gf 
 
 
 def run_game():
@@ -10,19 +11,20 @@ def run_game():
     screen = pygame.display.set_mode(
         (ai_settings.screen_width, ai_settings.screen_height))
     pygame.display.set_caption('Alien game')
+
+    #Создание коробля
+    ship = Ship(screen)
+
     #Назначение цвета фона
     bgcolor = (230, 230, 230)
 
     #Запуск основного цикла программы
     while True:
-        #Отслеживание событий клавиатуры и мыши
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
-            #При каждом проходе цикла перересовывается экран
-            screen.fill(ai_settings.bg_color)
+        gf.check_events(ship)
+        ship.update()
+        gf.update_screen(ai_settings, screen, ship)
         
-        #Отображение последнего прорисованного экрана.
-        pygame.display.flip()
+        
+
 run_game()
 
