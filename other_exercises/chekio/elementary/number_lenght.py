@@ -1,7 +1,8 @@
 
 def number_length(a: int) -> int:
+    b = list(str(a))
     # your code here
-    return len(number_length)
+    return len(b)
 
 
 if __name__ == "__main__":
